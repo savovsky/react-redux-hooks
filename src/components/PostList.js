@@ -8,10 +8,26 @@ class PostList extends React.Component {
     this.props.fetchPosts();
   }
 
+  renderList() {
+    return this.props.posts.map(post => {
+      return (
+        <div key={post.id}>
+          <h3 style={{color: 'darkcyan'}}>{post.title}</h3>
+          <p>{post.body}</p>
+          <div>author: </div>
+        </div>
+      );
+
+    });
+  }
+
   render() {
-    console.log(this.props.state);
+    console.log(this.props.posts);
     return (
-      <div>PostList component</div>
+      <div>
+        <h2>Posts List</h2>
+        <div>{this.renderList()}</div>
+      </div>
     );
   }
 
@@ -19,7 +35,7 @@ class PostList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    state: state
+    posts: state.posts
   }
 };
 
