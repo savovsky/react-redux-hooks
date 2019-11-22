@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchPosts } from '../actions';
+import { fetchPosts } from '../actions/postsActions';
 import Post from './Post';
 
 class PostsList extends React.Component {
@@ -12,7 +12,7 @@ class PostsList extends React.Component {
 
   renderList() {
     return this.props.posts.map((post, i) => {
-      if ( i < 20) {
+      if ( i < 25) {
         return (
           <div className="card" key={post.id}>
             <Post
@@ -42,7 +42,7 @@ class PostsList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts
+    posts: state.posts.posts
   }
 };
 

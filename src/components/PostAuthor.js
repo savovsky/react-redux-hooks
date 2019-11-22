@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUser } from '../actions';
+import { fetchUser } from '../actions/usersActions';
 
 class PostAuthor extends React.Component {
 
@@ -14,16 +14,16 @@ class PostAuthor extends React.Component {
     const user = this.props.user;
 
     return (
-      <>
-        <div className="post-author">author: {user ? user.name : 'unknown'}</div>
-      </>
+      <div className="post-author">
+        author: {user ? user.name : 'unknown'}
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state, props) => {
   return {
-    user: state.users.find(user => user.id === props.userId)
+    user: state.users.users.find(user => user.id === props.userId)
   }
 };
 
