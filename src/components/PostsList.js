@@ -32,7 +32,7 @@ class PostsList extends React.Component {
     console.log(this.props.posts);
     return (
       <div>
-        <h2>Posts List</h2>
+        <h2>Posts</h2>
         {this.renderList()}
       </div>
     );

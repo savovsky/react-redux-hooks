@@ -6,11 +6,12 @@ import { fetchUser } from '../actions/usersActions';
 class PostAuthor extends React.Component {
 
   componentDidMount() {
-    this.props.fetchUser(this.props.userId);
+    console.log(this.props);
+      this.props.fetchUser(this.props.userId);
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const user = this.props.user;
 
     return (
