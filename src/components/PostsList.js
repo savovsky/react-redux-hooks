@@ -14,13 +14,14 @@ class PostsList extends React.Component {
     return this.props.posts.map((post, i) => {
       if ( i < 20) {
         return (
-          <div key={post.id}>
+          <>
             <Post
+              id={post.id}
               title={post.title}
               body={post.body}
               userId={post.userId}
             />
-          </div>
+          </>
         );
       }
 
@@ -33,7 +34,7 @@ class PostsList extends React.Component {
     return (
       <div>
         <h2>Posts List</h2>
-        <div>{this.renderList()}</div>
+        {this.renderList()}
       </div>
     );
   }

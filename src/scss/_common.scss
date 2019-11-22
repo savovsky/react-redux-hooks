@@ -1,0 +1,14 @@
+.app-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: $white;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid $grey;
+    margin: 0 0 10px;
+    max-width: 450px;
+    min-width: 200px;
+}

@@ -15,11 +15,10 @@ class PostAuthor extends React.Component {
 
     return (
       <>
-        <div>author: {user ? user.name : 'unknown'}</div>
+        <div className="post-author">author: {user ? user.name : 'unknown'}</div>
       </>
     );
   }
-
 }
 
 const mapStateToProps = (state, props) => {
