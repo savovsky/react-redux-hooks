@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchUser } from '../actions';
 
-class UserHeader extends React.Component {
+class PostAuthor extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.userId);
@@ -28,4 +28,4 @@ const mapStateToProps = (state, props) => {
   }
 };
 
-export default connect(mapStateToProps, { fetchUser })(UserHeader);
+export default connect(mapStateToProps, { fetchUser })(PostAuthor);
