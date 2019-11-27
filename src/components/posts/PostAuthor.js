@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUser } from '../actions/usersActions';
+import { fetchUser } from '../../actions/usersActions';
 
 class PostAuthor extends React.Component {
 
