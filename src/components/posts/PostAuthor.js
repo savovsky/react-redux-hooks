@@ -16,7 +16,7 @@ class PostAuthor extends React.Component {
 
     return (
       <div className="post-author">
-        author: {user ? user.name : 'unknown'}
+        by {user ? user.name : 'unknown'}
       </div>
     );
   }

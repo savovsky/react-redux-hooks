@@ -14,13 +14,13 @@ class PostsList extends React.Component {
     return this.props.posts.map((post, i) => {
       if ( i < 25) {
         return (
-          <div className="card" key={post.id}>
             <Post
+              key={post.id}
+              postId={post.id}
               title={post.title}
               body={post.body}
               userId={post.userId}
             />
-          </div>
         );
       }
 
