@@ -7,7 +7,7 @@ const PostPage = (props) => {
 
 
   return (
-    <div>
+    <div className="item-details">
       <h3 className="post-title">{props.post.title}</h3>
       <PostAuthor userId={props.post.userId} />
       <p>{props.post.body}</p>
