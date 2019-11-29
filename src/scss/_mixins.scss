@@ -10,3 +10,62 @@
     0 1px 1px 0 map-get($shadow-color, '2'),
     0 1px 3px 0 map-get($shadow-color, '3');
 }
+
+@mixin media-monitor-lg {
+    @media only screen and (max-width: map-get($breakpoint, 'monitor-lg')) {
+        @content;
+    }
+}
+
+@mixin media-monitor-md {
+    @media only screen and (max-width: map-get($breakpoint, 'monitor-md')) {
+        @content;
+    }
+}
+
+@mixin media-monitor-sm {
+    @media only screen and (max-width: map-get($breakpoint, 'monitor-sm')) {
+        @content;
+    }
+}
+
+@mixin media-tablet-lg {
+    @media only screen and (max-width: map-get($breakpoint, 'tablet-lg')) {
+        @content;
+    }
+}
+
+@mixin media-tablet-md {
+    @media only screen and (max-width: map-get($breakpoint, 'tablet-md')) {
+        @content;
+    }
+}
+
+@mixin media-tablet-sm {
+    @media only screen and (max-width: map-get($breakpoint, 'tablet-sm')) {
+        @content;
+    }
+}
+
+@mixin media-phone-lg {
+    @media only screen and (max-width: map-get($breakpoint, 'phone-lg')) {
+        @content;
+    }
+}
+
+@mixin media-phone-md {
+    @media only screen and (max-width: map-get($breakpoint, 'phone-md')) {
+        @content;
+    }
+}
+
+@mixin media-phone-sm {
+    @media only screen and (max-width: map-get($breakpoint, 'phone-sm')) {
+        @content;
+    }
+}
+
+
+
+
+

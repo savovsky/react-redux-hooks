@@ -6,6 +6,18 @@
     border-radius: 5px;
     background-color: $white;
 
+    // @include media-phone-lg {
+    //     background-color: green;
+    // }
+
+    // @include media-phone-md {
+    //     background-color: blue;
+    // }
+
+    // @include media-phone-sm {
+    //     background-color: red;
+    // }
+
 }
 
 .card-link {
