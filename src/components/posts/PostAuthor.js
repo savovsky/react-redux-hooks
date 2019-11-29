@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUser } from '../actions/usersActions';
+import { fetchUser } from '../../actions/usersActions';
 
 class PostAuthor extends React.Component {
 
@@ -16,7 +16,7 @@ class PostAuthor extends React.Component {
 
     return (
       <div className="post-author">
-        author: {user ? user.name : 'unknown'}
+        by {user ? user.name : 'unknown'}
       </div>
     );
   }

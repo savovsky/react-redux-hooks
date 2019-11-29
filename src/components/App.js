@@ -1,12 +1,11 @@
 import React from 'react';
-import PostsList from './PostsList';
+import AppRouter from '../routers/AppRouter';
 
-const App = () => {
-  return (
+
+const App = () => (
     <div className="app-container">
-      <PostsList />
+      <AppRouter />
     </div>
-  );
-}
+);
 
 export default App;

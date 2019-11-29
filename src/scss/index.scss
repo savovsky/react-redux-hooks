@@ -1,6 +1,8 @@
-@import './scss/colors';
-@import './scss/common';
-@import './scss/post';
+@import './colors';
+@import './mixins';
+@import './common';
+@import './post';
+@import './card';
 
 
 body {
@@ -17,4 +19,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
 }

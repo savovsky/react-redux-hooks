@@ -1,0 +1,5 @@
+@mixin card-hover {
+    background-color: $light-grey-hover;
+    box-shadow: none;
+    border: 1px solid $dark-grey;
+}

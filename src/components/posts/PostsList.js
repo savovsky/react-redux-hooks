@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchPosts } from '../actions/postsActions';
+import { fetchPosts } from '../../actions/postsActions';
 import Post from './Post';
 
 class PostsList extends React.Component {
@@ -14,13 +14,13 @@ class PostsList extends React.Component {
     return this.props.posts.map((post, i) => {
       if ( i < 25) {
         return (
-          <div className="card" key={post.id}>
             <Post
+              key={post.id}
+              postId={post.id}
               title={post.title}
               body={post.body}
               userId={post.userId}
             />
-          </div>
         );
       }
 
@@ -32,7 +32,6 @@ class PostsList extends React.Component {
     console.log(this.props.posts);
     return (
       <div>
-        <h2>Posts</h2>
         {this.renderList()}
       </div>
     );
