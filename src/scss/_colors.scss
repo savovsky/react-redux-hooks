@@ -4,3 +4,9 @@ $light-grey-hover: rgb(253, 253, 253);
 $grey: rgb(220, 220, 220);
 $dark-grey: rgb(200, 200, 200);
 $blue: rgb(0, 115, 185);
+
+$shadow-color: (
+    '1': rgba(0, 0, 0, 0.20),
+    '2': rgba(0, 0, 0, 0.14),
+    '3': rgba(0, 0, 0, 0.12)
+);
