@@ -5,7 +5,6 @@ import PostAuthor from './PostAuthor';
 const PostPage = (props) => {
   console.log('props', props);
 
-
   return (
     <div className="item-details">
       <h3 className="post-title">{props.post.title}</h3>

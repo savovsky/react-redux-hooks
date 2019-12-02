@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 
 const AppNavLinks = () => (
-    <div>
+    <div className="app-nav-links-wrapper">
       <NavLink to="/" activeClassName="active-app-nav-link" exact>Home</NavLink>
       <NavLink to="/posts" activeClassName="active-app-nav-link">Posts</NavLink>
       <NavLink to="/authors" activeClassName="active-app-nav-link">Authors</NavLink>
