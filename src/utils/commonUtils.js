@@ -3,3 +3,10 @@ export const to = (promise) => {
     .then(responce => [responce, null])
     .catch(error => [null, error]);
 };
+
+export const stringTruncate = (str, length) => {
+  if (str.length > length) {
+      return str.substring(0, length).concat('...');
+  }
+  return str;
+};

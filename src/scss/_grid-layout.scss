@@ -12,7 +12,7 @@
         width: 48.8%;
     }
 
-    @include media-query-under('phone-md') {
+    @include media-query-under('phone-lg') {
         width: 100%;
     }
 }

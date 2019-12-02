@@ -14,6 +14,7 @@ class PostsList extends React.Component {
     return this.props.posts.map((post, i) => {
       if ( i < 25) {
         return (
+          <div className="grid-item">
             <Post
               key={post.id}
               postId={post.id}
@@ -21,6 +22,7 @@ class PostsList extends React.Component {
               body={post.body}
               userId={post.userId}
             />
+          </div>
         );
       }
 

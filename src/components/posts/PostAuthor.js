@@ -11,13 +11,12 @@ class PostAuthor extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
     const user = this.props.user;
 
     return (
-      <div className="post-author">
-        by {user ? user.name : 'unknown'}
-      </div>
+      <>
+        {`by ${user ? user.name : 'unknown'}`}
+      </>
     );
   }
 }
