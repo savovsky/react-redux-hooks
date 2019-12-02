@@ -1,15 +1,10 @@
 .card {
     @include box-shadow;
-    margin: 0 0 10px;
     padding: 20px;
     border: 1px solid $color-grey;
     border-radius: 5px;
     background-color: $color-white;
-
-    // Remind mixin-media-query
-    // @include media-query-under('phone-lg') {
-    //     background-color: green;
-    // }
+    font-size: 0.9rem;
 }
 
 .card-link {

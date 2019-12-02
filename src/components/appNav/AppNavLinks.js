@@ -8,7 +8,6 @@ const AppNavLinks = () => (
       <NavLink to="/posts" activeClassName="active">Posts</NavLink>
       <NavLink to="/authors" activeClassName="active">Authors</NavLink>
       <NavLink to="/photos" activeClassName="active">Photos</NavLink>
-      <NavLink to="/albums" activeClassName="active">Albums</NavLink>
     </div>
 );
 
