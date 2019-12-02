@@ -3,8 +3,8 @@ import AppNavLinks from './AppNavLinks';
 
 
 const AppNav = () => (
-    <div>
-      <h2>JSONPlaceholder</h2>
+    <div className="header-wrapper">
+      <h1>JSONPlaceholder</h1>
       <AppNavLinks />
     </div>
 );

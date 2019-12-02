@@ -1,13 +1,13 @@
-$primary-color: rgb(0, 115, 185);
-$secondary-color: rgb(255, 215, 65);
-$white: rgb(255, 255, 255);
-$light-grey: rgb(250, 250, 250);
-$light-grey-hover: rgb(253, 253, 253);
-$grey: rgb(220, 220, 220);
-$dark-grey: rgb(200, 200, 200);
-$black: rgb(50, 50, 50);
+$color-primary: rgb(0, 115, 185);
+$color-secondary: rgb(255, 215, 65);
+$color-white: rgb(255, 255, 255);
+$color-grey-light-grey: rgb(250, 250, 250);
+$color-grey-light-grey-hover: rgb(253, 253, 253);
+$color-grey: rgb(220, 220, 220);
+$color-grey-dark: rgb(200, 200, 200);
+$color-black: rgb(50, 50, 50);
 
-$shadow-color: (
+$color-shadow-card: (
     '1': rgba(0, 0, 0, 0.20),
     '2': rgba(0, 0, 0, 0.14),
     '3': rgba(0, 0, 0, 0.12)
@@ -16,8 +16,8 @@ $shadow-color: (
 // Remind function
 // @function set-text-color($bg-color) {
 //     @if (lightness($bg-color) > 40%) {
-//         @return $black;
+//         @return $color-black;
 //     } @else {
-//         @return $white;
+//         @return $color-white;
 //     }
 // }

@@ -1,14 +1,14 @@
 @mixin card-hover {
-    border: 1px solid $dark-grey;
-    background-color: $light-grey-hover;
+    border: 1px solid $color-grey-dark;
+    background-color: $color-grey-light-grey-hover;
     box-shadow: none;
 }
 
 @mixin box-shadow {
     box-shadow:
-    0 2px 1px -1px map-get($shadow-color, '1'),
-    0 1px 1px 0 map-get($shadow-color, '2'),
-    0 1px 3px 0 map-get($shadow-color, '3');
+    0 2px 1px -1px map-get($color-shadow-card, '1'),
+    0 1px 1px 0 map-get($color-shadow-card, '2'),
+    0 1px 3px 0 map-get($color-shadow-card, '3');
 }
 
 @mixin media-query-under ($breakpoint-name) {

@@ -2,9 +2,9 @@
     @include box-shadow;
     margin: 0 0 10px;
     padding: 20px;
-    border: 1px solid $grey;
+    border: 1px solid $color-grey;
     border-radius: 5px;
-    background-color: $white;
+    background-color: $color-white;
 
     // Remind mixin-media-query
     // @include media-query-under('phone-lg') {
@@ -22,7 +22,7 @@
 
 .card-title {
     margin: 0 0 15px;
-    color: $primary-color;
+    color: $color-primary;
 }
 
 .item-details {
