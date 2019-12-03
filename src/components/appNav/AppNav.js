@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import AppNavLinks from './AppNavLinks';
-import LinearLoader from '../../loaders/LinearLoader';
+import LinearLoader from '../loaders/LinearLoader';
 
 
 const AppNav = (props) => {

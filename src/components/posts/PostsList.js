@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchPosts } from '../../actions/postsActions';
 import Post from './Post';
+import PageContentTools from '../pageContentTools/PageContentTools';
 
 class PostsList extends React.Component {
 
@@ -32,9 +33,12 @@ class PostsList extends React.Component {
   render() {
     console.log(this.props.posts);
     return (
-      <div className="grid-container">
-        {this.renderList()}
-      </div>
+      <>
+        <div className="grid-container">
+          {this.renderList()}
+        </div>
+        <PageContentTools />
+      </>
     );
   }
 
