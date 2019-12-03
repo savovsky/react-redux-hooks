@@ -12,15 +12,16 @@ class PostsList extends React.Component {
 
   renderList() {
     return this.props.posts.map((post, i) => {
-      if ( i < 25) {
+      if ( i < 6) {
         return (
+          <div className="grid-item" key={post.id}>
             <Post
-              key={post.id}
               postId={post.id}
               title={post.title}
               body={post.body}
               userId={post.userId}
             />
+          </div>
         );
       }
 
@@ -31,7 +32,7 @@ class PostsList extends React.Component {
   render() {
     console.log(this.props.posts);
     return (
-      <div>
+      <div className="grid-container">
         {this.renderList()}
       </div>
     );

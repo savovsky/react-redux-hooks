@@ -5,12 +5,13 @@ import PostAuthor from './PostAuthor';
 const PostPage = (props) => {
   console.log('props', props);
 
-
   return (
-    <div className="item-details">
+    <div className="post-wrapper">
       <h3 className="post-title">{props.post.title}</h3>
-      <PostAuthor userId={props.post.userId} />
-      <p>{props.post.body}</p>
+      <div className="post-author">
+        Post <PostAuthor userId={props.post.userId} />
+      </div>
+      <div className="post-body">{props.post.body}</div>
     </div>
   )
 };

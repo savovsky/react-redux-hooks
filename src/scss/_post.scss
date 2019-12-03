@@ -1,9 +1,29 @@
+.post-wrapper {
+    padding: 30px 40px 40px;
+    border: 1px solid $color-grey-dark;
+    background-color: $color-white;
+    text-align: center;
+
+    @include media-query-under('phone-lg') {
+        padding: 20px;
+    }
+}
+
 .post-title {
-    color: $blue;
     margin: 0 0 15px;
+    color: $color-primary;
+    font-size: 1.5rem;
 }
 
 .post-author {
-    font-size: 0.8rem;
-    text-align: right;
+    padding: 10px 0 30px;
+    border-top: 1px solid $color-grey-dark;
+
+    @include media-query-under('phone-lg') {
+        padding: 10px 0;
+    }
+}
+
+.post-body {
+    @include first-letter-color
 }

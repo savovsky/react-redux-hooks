@@ -1,0 +1,21 @@
+.progress-bar-container {
+    height: 3px;
+    margin: 10px 0 0;
+}
+
+.progress-bar-wrapper {
+    background-color: $color-grey;
+}
+
+.progress-bar {
+    position: relative;
+    width: 70%;
+    height: 3px;
+    background: $bg-gradient;
+    animation: example ease-in-out 1s infinite alternate;
+}
+
+@keyframes example {
+    0%  { left: 0%; }
+    100%  { left: 30%; }
+}

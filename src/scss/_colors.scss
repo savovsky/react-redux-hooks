@@ -1,6 +1,34 @@
-$white: rgb(255, 255, 255);
-$light-grey: rgb(250, 250, 250);
-$light-grey-hover: rgb(253, 253, 253);
-$grey: rgb(220, 220, 220);
-$dark-grey: rgb(200, 200, 200);
-$blue: rgb(0, 115, 185);
+$color-primary: rgb(0, 115, 185);
+$color-secondary: rgb(255, 215, 65);
+$color-secondary-transparent: rgba(255, 215, 65, 0.1);
+$color-white: rgb(255, 255, 255);
+$color-grey-light-grey: rgb(250, 250, 250);
+$color-grey-light-grey-hover: rgb(253, 253, 253);
+$color-grey: rgb(220, 220, 220);
+$color-grey-dark: rgb(200, 200, 200);
+$color-black: rgb(50, 50, 50);
+
+$bg-gradient: linear-gradient(
+    to right,
+    $color-secondary-transparent,
+    $color-secondary,
+    $color-primary,
+    $color-primary,
+    $color-secondary,
+    $color-secondary-transparent
+);
+
+$color-shadow-card: (
+    '1': rgba(0, 0, 0, 0.20),
+    '2': rgba(0, 0, 0, 0.14),
+    '3': rgba(0, 0, 0, 0.12)
+);
+
+// Remind function
+// @function set-text-color($bg-color) {
+//     @if (lightness($bg-color) > 40%) {
+//         @return $color-black;
+//     } @else {
+//         @return $color-white;
+//     }
+// }

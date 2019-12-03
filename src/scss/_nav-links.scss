@@ -1,0 +1,19 @@
+.app-nav-links-wrapper {
+    margin: 10px 0 0;
+    font-size: 1.1rem;
+
+    a {
+        margin: 0 10px 0 0;
+
+        &:hover {
+            &:not(.active) {
+                color: $color-primary;
+            }
+        }
+    }
+
+    .active {
+        color: $color-black;
+        font-weight: 700;
+    }
+}
