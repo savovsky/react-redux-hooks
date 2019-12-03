@@ -6,7 +6,7 @@ const PageContentTools = (props) => {
   console.log('tools props', props);
 
   return (
-    <div className="tools-wrapper">
+    <div className="tools-wrapper m-t-10 m-b-30">
       <div>
         <button type="button" className="btn primary">Add Post</button>
       </div>

@@ -15,7 +15,7 @@ class PostsList extends React.Component {
     return this.props.posts.map((post, i) => {
       if ( i < 6) {
         return (
-          <div className="grid-item" key={post.id}>
+          <div className="grid-item m-b-15" key={post.id}>
             <Post
               postId={post.id}
               title={post.title}

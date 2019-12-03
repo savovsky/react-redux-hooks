@@ -6,7 +6,6 @@
 
 .grid-item {
     width: 32%;
-    margin: 0 0 15px;
 
     @include media-query-under('tablet-sm') {
         width: 48.8%;

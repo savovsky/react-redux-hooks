@@ -1,6 +1,5 @@
 .card {
     @include card-shadow;
-    padding: 20px;
     border: 1px solid $color-grey;
     border-radius: 5px;
     background-color: $color-white;
@@ -16,7 +15,6 @@
 
 .card-header {
     height: 40px;
-    margin: 0 0 15px;
     color: $color-primary;
 
     @include media-query-under('phone-lg') {
@@ -26,7 +24,6 @@
 
 .card-body {
     height: 85px;
-    margin: 0 0 15px;
     font-size: 0.8rem;
 
     @include media-query-under('phone-lg') {

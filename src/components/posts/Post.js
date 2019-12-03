@@ -6,9 +6,9 @@ import * as Utils from '../../utils/commonUtils';
 
 const Post = (props) => (
   <Link to={`/post/${props.postId}`}>
-    <div className="card card-link" >
-        <h3 className="card-header">{Utils.stringTruncate(props.title, 30)}</h3>
-        <div className="card-body">{Utils.stringTruncate(props.body, 150)}</div>
+    <div className="card card-link p-20" >
+        <h3 className="card-header m-b-15">{Utils.stringTruncate(props.title, 30)}</h3>
+        <div className="card-body m-b-15">{Utils.stringTruncate(props.body, 150)}</div>
         <div className="card-footer">
           <PostAuthor userId={props.userId} />
         </div>
