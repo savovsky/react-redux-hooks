@@ -1,0 +1,28 @@
+.btn {
+    border-radius: 4px;
+}
+
+.primary {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+.secondary {
+    background-color: $color-secondary;
+    color: $color-black;
+}
+
+.warn {
+    background-color: $color-warn;
+    color: $color-white;
+}
+
+.basic {
+    background-color: $color-white;
+    color: $color-black;
+}
+
+.disabled {
+    background-color: $color-grey-dark;
+    color: $color-black;
+}
