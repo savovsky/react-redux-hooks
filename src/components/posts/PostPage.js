@@ -9,9 +9,9 @@ const PostPage = (props) => {
     <div className="post-wrapper">
       <h3 className="post-title">{props.post.title}</h3>
       <div className="post-author">
-        <PostAuthor userId={props.post.userId} />
+        Post <PostAuthor userId={props.post.userId} />
       </div>
-      <div>{props.post.body}</div>
+      <div className="post-body">{props.post.body}</div>
     </div>
   )
 };
