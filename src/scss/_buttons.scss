@@ -18,31 +18,31 @@
     vertical-align: baseline;
 
     &.primary {
-        @include btn-interaction($color-primary-hover);
+        @include btn-interaction($color-primary, $color-primary-hover);
         background-color: $color-primary;
         color: $color-white;
     }
 
     &.secondary {
-        @include btn-interaction($color-secondary-hover);
+        @include btn-interaction($color-secondary, $color-secondary-hover);
         background-color: $color-secondary;
         color: $color-white;
     }
 
     &.accent {
-        @include btn-interaction($color-accent-hover);
+        @include btn-interaction($color-accent, $color-accent-hover);
         background-color: $color-accent;
         color: $color-black;
     }
 
     &.warn {
-        @include btn-interaction($color-warn-hover);
+        @include btn-interaction($color-warn, $color-warn-hover);
         background-color: $color-warn;
         color: $color-white;
     }
 
     &.basic {
-        @include btn-interaction($color-basic-hover);
+        @include btn-interaction($color-basic, $color-basic-hover);
         border: 1px solid $color-grey-dark;
         background-color: $color-basic;
         color: $color-black;

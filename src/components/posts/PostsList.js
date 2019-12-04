@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 
 import { fetchPosts } from '../../actions/postsActions';
 import Post from './Post';
-import PageContentTools from '../pageContentTools/PageContentTools';
 
 class PostsList extends React.Component {
+
+  state = {
+    postsDisplayed: 6
+  };
 
   componentDidMount() {
     this.props.fetchPosts();
@@ -13,7 +16,7 @@ class PostsList extends React.Component {
 
   renderList() {
     return this.props.posts.map((post, i) => {
-      if ( i < 6) {
+      if ( i < this.state.postsDisplayed) {
         return (
           <div className="grid-item m-b-15" key={post.id}>
             <Post
@@ -30,6 +33,23 @@ class PostsList extends React.Component {
     });
   }
 
+  renderButton() {
+    if (this.state.postsDisplayed < this.props.posts.length) {
+      return (
+        <div className="posts-footer m-t-10 m-b-30">
+        <button
+          type="button"
+          className="btn basic"
+          onClick={() => this.setState({postsDisplayed: this.state.postsDisplayed + 6})}
+        >Show More
+        </button>
+      </div>
+      );
+    }
+
+    return null;
+  }
+
   render() {
     console.log(this.props.posts);
     return (
@@ -37,7 +57,7 @@ class PostsList extends React.Component {
         <div className="grid-container">
           {this.renderList()}
         </div>
-        <PageContentTools />
+        {this.renderButton()}
       </>
     );
   }
