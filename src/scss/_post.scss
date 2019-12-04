@@ -29,6 +29,6 @@
 }
 
 .posts-footer {
-    display: flex;
+    @include display-flex;
     justify-content: center;
 }
