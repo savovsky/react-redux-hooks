@@ -27,3 +27,8 @@
 .post-body {
     @include first-letter-color
 }
+
+.posts-footer {
+    display: flex;
+    justify-content: center;
+}

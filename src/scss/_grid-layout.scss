@@ -6,7 +6,19 @@
 
 .grid-item {
     width: 32%;
-    margin: 0 0 15px;
+
+    a {
+        &:focus,
+        &:hover {
+            .card {
+                @include card-hover;
+            }
+
+            .card-header {
+                color: $color-primary-hover;
+            }
+        }
+    }
 
     @include media-query-under('tablet-sm') {
         width: 48.8%;
