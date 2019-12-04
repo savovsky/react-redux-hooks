@@ -25,11 +25,15 @@
     0 1px 10px 0 map-get($color-shadow, '3');
 }
 
-@mixin btn-hover($bg-color-hover) {
+@mixin btn-interaction($bg-color-hover) {
     &:focus,
     &:hover {
         @include btn-shadow-hover;
         background-color: $bg-color-hover;
+    }
+
+    &:active {
+        box-shadow: none;
     }
 }
 
