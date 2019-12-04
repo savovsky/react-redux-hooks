@@ -7,13 +7,9 @@ const PageContentTools = (props) => {
 
   return (
     <div className="tools-wrapper m-t-10 m-b-30">
-      <div>
-        <button type="button" className="btn primary">Add Post</button>
-      </div>
-      <div>
-        <button type="button" className="btn accent m-r-10">Show Less</button>
-        <button type="button" className="btn warn">Show More</button>
-      </div>
+    <div>
+        <button type="button" className="btn basic">Show More</button>
+    </div>
     </div>
   );
 };

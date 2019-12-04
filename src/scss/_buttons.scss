@@ -42,8 +42,9 @@
     }
 
     &.basic {
-        @include btn-interaction($color-grey);
-        background-color: $color-white;
+        @include btn-interaction($color-basic-hover);
+        border: 1px solid $color-grey-dark;
+        background-color: $color-basic;
         color: $color-black;
     }
 
