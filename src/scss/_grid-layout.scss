@@ -7,6 +7,19 @@
 .grid-item {
     width: 32%;
 
+    a {
+        &:focus,
+        &:hover {
+            .card {
+                @include card-hover;
+            }
+
+            .card-header {
+                color: $color-primary-hover;
+            }
+        }
+    }
+
     @include media-query-under('tablet-sm') {
         width: 48.8%;
     }

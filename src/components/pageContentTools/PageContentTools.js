@@ -12,7 +12,7 @@ const PageContentTools = (props) => {
       </div>
       <div>
         <button type="button" className="btn accent m-r-10">Show Less</button>
-        <button type="button" className="btn secondary">Show More</button>
+        <button type="button" className="btn warn">Show More</button>
       </div>
     </div>
   );
