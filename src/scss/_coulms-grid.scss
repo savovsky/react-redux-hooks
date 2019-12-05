@@ -1,0 +1,35 @@
+.columns-container {
+    @include display-flex;
+    justify-content: space-evenly;
+    background-color: $color-secondary;
+
+    @include media-query-under('tablet-sm') {
+        flex-wrap: wrap;
+    }
+}
+
+.column-wrapper {
+    width: 100%;
+    min-height: 400px;
+    max-height: 600px;
+    padding: 10px;
+    background-color: $color-accent;
+    overflow-y: auto;
+
+    @include media-query-under('tablet-sm') {
+        width: 45%;
+    }
+
+    @include media-query-under('phone-lg') {
+        width: 45%;
+    }
+
+    @include media-query-under('phone-md') {
+        width: 100%;
+    }
+}
+
+.column {
+    height: 100%;
+    background-color: $color-accent-hover;
+}
