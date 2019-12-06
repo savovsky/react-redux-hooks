@@ -38,6 +38,34 @@ export default (state = usersDefaultState, action) => {
             };
         }
 
+        case 'FETCH_USERS_START' : {
+            return {
+                ...state,
+                fetching: true,
+                fetchedFulfilled: false,
+                fetchedRejected: false,
+                errorMsg: ''
+            };
+        }
+        case 'FETCH_USERS_FULFILLED' : {
+            return {
+                ...state,
+                fetching: false,
+                fetchedFulfilled: true,
+                fetchedRejected: false,
+                users: [...action.payload]
+            };
+        }
+        case 'FETCH_USERS_REJECTED' : {
+            return {
+                ...state,
+                fetching: false,
+                fetchedFulfilled: false,
+                fetchedRejected: true,
+                errorMsg: action.payload
+            };
+        }
+
         default: 
             return state;
     }

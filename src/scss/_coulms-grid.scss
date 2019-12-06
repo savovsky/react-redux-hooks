@@ -1,0 +1,35 @@
+.columns-container {
+    @include display-flex;
+    justify-content: space-evenly;
+    // background-color: $color-secondary;
+
+    @include media-query-under('tablet-sm') {
+        flex-wrap: wrap;
+    }
+}
+
+.column-wrapper {
+    width: 100%;
+    min-height: 400px;
+    max-height: 550px;
+    padding: 10px;
+    // background-color: $color-accent;
+
+    @include media-query-under('tablet-sm') {
+        width: 45%;
+    }
+
+    @include media-query-under('phone-lg') {
+        width: 45%;
+    }
+
+    @include media-query-under('phone-md') {
+        width: 100%;
+    }
+}
+
+.column {
+    height: 100%;
+    border: 1px solid $color-grey-dark;
+    overflow-y: auto;
+}

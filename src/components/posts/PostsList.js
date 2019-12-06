@@ -51,7 +51,6 @@ class PostsList extends React.Component {
   }
 
   render() {
-    console.log(this.props.posts);
     return (
       <>
         <div className="grid-container">
