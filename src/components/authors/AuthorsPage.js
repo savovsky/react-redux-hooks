@@ -8,7 +8,9 @@ import AuthorCard from './AuthorCard';
 class AuthorsPage extends React.Component {
 
   componentDidMount() {
-    this.props.fetchUsers();
+    if (this.props.users.length === 0) {
+      this.props.fetchUsers();
+    }
   }
 
   renderList() {
