@@ -1,44 +1,47 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { fetchUsers } from '../../actions/usersActions';
+import AuthorCard from './AuthorCard';
 
 
-const AuthorsPage = () => (
-  <div className="columns-container">
-    <div className="column-wrapper">
-      <div className="column">
-        <div className="card p-20 m-10">
-          <h3 className="card-header m-b-15">123</h3>
-          <div className="card-body m-b-15">jnerpfnerfoj</div>
-          <div className="card-footer">irfpqieurfnq0e</div>
+class AuthorsPage extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchUsers();
+  }
+
+  renderList() {
+    return this.props.users.map((user) => {
+      return (
+        <AuthorCard key={user.id} user={user} />
+      );
+    });
+  }
+
+  render() {
+    console.log(this.props.users);
+    return (
+      <div className="columns-container">
+        <div className="column-wrapper">
+          <div className="column">{this.renderList()}</div>
         </div>
-        <div className="card p-20 m-10">
-          <h3 className="card-header m-b-15">123</h3>
-          <div className="card-body m-b-15">jnerpfnerfoj</div>
-          <div className="card-footer">irfpqieurfnq0e</div>
+        <div className="column-wrapper">
+          <div className="column"></div>
         </div>
-        <div className="card p-20 m-10">
-          <h3 className="card-header m-b-15">123</h3>
-          <div className="card-body m-b-15">jnerpfnerfoj</div>
-          <div className="card-footer">irfpqieurfnq0e</div>
+        <div className="column-wrapper">
+          <div className="column"></div>
         </div>
       </div>
-    </div>
-    <div className="column-wrapper">
-      <div className="column">
-        <div className="card p-20 m-10">
-          <h3 className="card-header m-b-15">123</h3>
-        </div>
-        <div className="card p-20 m-10">
-          <div className="card-body m-b-15">jnerpfnerfoj</div>
-        </div>
-        <div className="card p-20 m-10">
-          <div className="card-footer m-b-15">jnerpfnerfoj</div>
-        </div>
-      </div>
-    </div>
-    <div className="column-wrapper">
-      <div className="column"></div>
-    </div>
-  </div>
-);
+    );
+  }
 
-export default AuthorsPage;
+}
+
+const mapStateToProps = (state) => {
+  return {
+    users: state.users.users
+  }
+};
+
+export default connect(mapStateToProps, { fetchUsers })(AuthorsPage);

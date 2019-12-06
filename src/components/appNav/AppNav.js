@@ -6,8 +6,6 @@ import LinearLoader from '../loaders/LinearLoader';
 
 
 const AppNav = (props) => {
-  console.log('props', props);
-
   return (
     <header className="header-wrapper m-t-10 m-b-10">
       <h1 className="m-0 p-0">JSONPlaceholder</h1>

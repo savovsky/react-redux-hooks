@@ -13,6 +13,18 @@ export const fetchUser = (id) => async (dispatch) => {
 
 };
 
+export const fetchUsers = () => async (dispatch) => {
+  dispatch(fetchUsersStart());
+  const [response, error] = await Utils.to(jsonPlaceholder.get('users'));
+
+  if (response) {
+    dispatch(fetchUsersFulfilled(response.data));
+  } else {
+    dispatch(fetchUsersRejected(error));
+  }
+
+};
+
 const fetchUserStart = () => ({
   type: 'FETCH_USER_START'
 });
@@ -24,5 +36,19 @@ const fetchUserFulfilled = (payload) => ({
   
 const fetchUserRejected= (payload) => ({
   type: 'FETCH_USER_REJECTED',
+  payload
+});
+
+const fetchUsersStart = () => ({
+  type: 'FETCH_USERS_START'
+});
+
+const fetchUsersFulfilled = (payload) => ({
+  type: 'FETCH_USERS_FULFILLED',
+  payload
+});
+
+const fetchUsersRejected= (payload) => ({
+  type: 'FETCH_USERS_REJECTED',
   payload
 });
