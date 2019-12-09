@@ -3,25 +3,23 @@ import React from 'react';
 const DnDContainer = (props) => {
 
   const handleDrop = e => {
-    console.log('handleDrop ', e);
+    console.log('handleDrop conatiner id ', e.currentTarget.id);
     e.preventDefault();
 
-    const item_id = e.dataTransfer.getData('item_id');
-    const item = document.getElementById(item_id);
+    const dragItemId = e.dataTransfer.getData('dragItemId');
+    const dragItem = document.getElementById(dragItemId);
 
-    console.log('item_id ', item_id);
-    console.log('e.target ', e.target.id);
 
-    if (item) {
-      console.log('item ', item);
-      item.style.display = 'block';
-      item.style.opacity = '1';
-      e.target.appendChild(item);
+    if (dragItem) {
+      console.log('handleDrop dragItem id ', dragItem.id);
+      dragItem.style.display = 'block';
+      e.target.appendChild(dragItem);
     }
+
   };
 
   const handleDragOver = e => {
-    // console.log('handleDragOver ', e);
+    console.log('handleDragOver ', e.currentTarget.id);
     e.preventDefault();
   };
 
