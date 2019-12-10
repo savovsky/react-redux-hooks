@@ -3,10 +3,14 @@ import React from 'react';
 const DnDItem = (props) => {
 
   const handleDragStart = e => {
-    e.dataTransfer.setData('itemId', e.target.id);
+    e.persist();
+    const dragItemId = e.target.id;
+    const sourceContainerId = e.target.parentNode.id;
+    e.dataTransfer.setData('dragItem', dragItemId);
+    e.dataTransfer.setData('sourceContainer', sourceContainerId);
 
-    console.log('%c drag from containerId = ', 'color: gold', e.nativeEvent.path[1].id);
-    console.log('%c drag itemId = ', 'color: deepskyblue', e.target.id);
+    console.log('%c drag itemId = ', 'color: deepskyblue', dragItemId);
+    console.log('%c source containerId = ', 'color: gold', sourceContainerId);
   }
 
   const handleDragOver = e => {

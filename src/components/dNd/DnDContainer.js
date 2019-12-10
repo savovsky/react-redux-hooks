@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addToBoard } from '../../actions/dndBoardsActions';
+import { addToBoard, removeFromBoard } from '../../actions/dndBoardsActions';
 
 const DnDContainer = (props) => {
   const handleDrop = e => {
     e.preventDefault();
     const containerId = e.currentTarget.id;
-    const itemId = +e.dataTransfer.getData('itemId');
+    const itemId = +e.dataTransfer.getData('dragItem');
+    const sourceContainerId = e.dataTransfer.getData('sourceContainer');
 
-    console.log('%c dropped to containerId = ', 'color: brown', containerId);
     console.log('%c dropped itemId = ', 'color: blue', itemId);
+    console.log('%c dropped to containerId = ', 'color: brown', containerId);
+    console.log('%c source containerId = ', 'color: red', sourceContainerId);
 
     if (itemId) {
+      props.removeFromBoard(sourceContainerId, itemId);
       props.addToBoard(containerId, itemId);
     }
 
@@ -36,4 +39,4 @@ const DnDContainer = (props) => {
   );
 };
 
-export default connect(null, { addToBoard })(DnDContainer);
+export default connect(null, { addToBoard, removeFromBoard })(DnDContainer);
