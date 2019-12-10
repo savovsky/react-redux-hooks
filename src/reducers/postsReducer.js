@@ -1,13 +1,7 @@
+import * as DefaultState from '../store/defaultStates';
 
-const postsDefaultState = {
-    fetching: false,
-    fetchedFulfilled: false,
-    fetchedRejected: false,
-    errorMsg: '',
-    posts: []
-}
 
-export default (state = postsDefaultState, action) => {
+export default (state = DefaultState.posts, action) => {
 
     switch (action.type) {
         case 'FETCH_POSTS_START' : {

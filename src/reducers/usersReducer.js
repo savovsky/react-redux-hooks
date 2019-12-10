@@ -1,13 +1,7 @@
+import * as DefaultState from '../store/defaultStates';
 
-const usersDefaultState = {
-    fetching: false,
-    fetchedFulfilled: false,
-    fetchedRejected: false,
-    errorMsg: '',
-    users: []
-}
 
-export default (state = usersDefaultState, action) => {
+export default (state = DefaultState.users, action) => {
 
     switch (action.type) {
         case 'FETCH_USER_START' : {

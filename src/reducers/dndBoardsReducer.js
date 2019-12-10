@@ -1,27 +1,20 @@
+import * as DefaultState from '../store/defaultStates';
 
-const dndBoardsDefaultState = {
-    b1: [],
-    b2: [],
-    b3: []
-}
 
-export default (state = dndBoardsDefaultState, action) => {
+export default (state = DefaultState.dndBoards, action) => {
+    const {boardId, itemId} = action.payload;
 
     switch (action.type) {
         case 'ADD_TO_BOARD' : {
             return {
                 ...state,
-                [action.payload.boardId]: [
-                    ...state[action.payload.boardId],
-                    action.payload.itemId
-                ]
+                [boardId]: [...state[boardId], itemId]
             };
         }
         case 'REMOVE_FROM_BOARD' : {
             return {
                 ...state,
-                [action.payload.boardId]: [
-                    ...state[action.payload.boardId].filter(id => id !== action.payload.boardId)]
+                [boardId]: state[boardId].filter(id => id !== itemId)
             };
         }
 
