@@ -1,9 +1,20 @@
 import React from 'react';
 
-const DnDItem = (props) => {
 
-  const handleDragStart = e => {
-    e.persist();
+class DnDItem extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleDragStart = this.handleDragStart.bind(this);
+    this.handleDragOver = this.handleDragOver.bind(this);
+
+    this.state = {
+      hoveredId: null,
+      dragId: null
+    };
+  }
+
+  handleDragStart(e) {
     const dragItemId = e.target.id;
     const sourceContainerId = e.target.parentNode.id;
     e.dataTransfer.setData('dragItem', dragItemId);
@@ -11,24 +22,40 @@ const DnDItem = (props) => {
 
     console.log('%c drag itemId = ', 'color: deepskyblue', dragItemId);
     console.log('%c source containerId = ', 'color: gold', sourceContainerId);
+    this.setState({ dragId: dragItemId });
   }
 
-  const handleDragOver = e => {
+  handleDragOver(e) {
     e.stopPropagation();
 
-    console.log('%c drag over itemId = ', 'color: darkcyan', e.currentTarget.id);
+    // console.log('%c drag over itemId = ', 'color: darkcyan', e.currentTarget.id);
+    this.setState({ hoveredId: e.currentTarget.id });
   }
 
-  return (
-    <div
-      id={props.id}
-      onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      draggable
-    >
-      {props.children}
-    </div>
-  );
+  getClass() {
+    if (!this.state.dragId && this.state.dragId !== this.state.hoveredId) {
+      return 'm-t-130';
+    }
+
+    return 'm-0';
+  }
+
+  render() {
+    // console.log('this.props.id', this.props.id);
+    console.log('this.state.hoveredId', this.state.hoveredId);
+    // console.log('this.state.dragId', this.state.dragId);
+    return (
+      <div
+        id={this.props.id}
+        onDragStart={this.handleDragStart}
+        onDragOver={this.handleDragOver}
+        draggable
+        className={this.getClass()}
+      >
+        {this.props.children}
+      </div>
+    );
+  }
 };
 
 export default DnDItem;
