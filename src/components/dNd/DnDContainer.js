@@ -5,27 +5,23 @@ import { addToBoard } from '../../actions/dndBoardsActions';
 
 const DnDContainer = (props) => {
   const handleDrop = e => {
+    e.preventDefault();
     const containerId = e.currentTarget.id;
     const itemId = +e.dataTransfer.getData('itemId');
-    console.log('dropped containerId = ', containerId);
-    console.log('dropped itemId = ', itemId);
-    e.preventDefault();
 
-    // const dragItem = document.getElementById(itemId);
+    console.log('%c dropped to containerId = ', 'color: brown', containerId);
+    console.log('%c dropped itemId = ', 'color: blue', itemId);
 
     if (itemId) {
-      // console.log('handleDrop dragItem id ', dragItem.id);
-      // dragItem.style.display = 'block';
-      // e.target.appendChild(dragItem);
-
       props.addToBoard(containerId, itemId);
     }
 
   };
 
   const handleDragOver = e => {
-    // console.log('handleDragOver ', e.currentTarget.id);
     e.preventDefault();
+
+    console.log('%c drag over containerId = ', 'color: coral', e.currentTarget.id);
   };
 
   return (
@@ -40,5 +36,4 @@ const DnDContainer = (props) => {
   );
 };
 
-// export default DnDContainer;
 export default connect(null, { addToBoard })(DnDContainer);
