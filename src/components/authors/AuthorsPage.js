@@ -15,35 +15,43 @@ class AuthorsPage extends React.Component {
     }
   }
 
-  renderList() {
-    return this.props.users.map((user) => {
+  user(id) {
+    return this.props.users.find((user) => user.id === id);
+  }
+
+  renderList(boardId) {
+    return this.props.dndBoards[boardId].map((id) => {
       return (
-        <DnDItem id={user.id} key={user.id}>
-          <AuthorCard user={user} />
+        <DnDItem id={id} key={id}>
+          <AuthorCard user={this.user(id)} />
         </DnDItem>
       );
     });
   }
 
   render() {
-    // console.log(this.props.users);
+    console.log(this.props.dndBoards);
     return (
       <div className="columns-container">
         <div className="column-wrapper">
           <div className="column">
-            <DnDContainer id="c-1">
-              {this.renderList()}
+            <DnDContainer id="b1">
+              {this.renderList('b1')}
             </DnDContainer>
           </div>
         </div>
         <div className="column-wrapper">
           <div className="column">
-            <DnDContainer id="c-2" />
+          <DnDContainer id="b2">
+              {this.renderList('b2')}
+            </DnDContainer>
           </div>
         </div>
         <div className="column-wrapper">
           <div className="column">
-            <DnDContainer id="c-3" />
+          <DnDContainer id="b3">
+              {this.renderList('b3')}
+            </DnDContainer>
           </div>
         </div>
       </div>
@@ -54,7 +62,8 @@ class AuthorsPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users.users
+    users: state.users.users,
+    dndBoards: state.dndBoards
   }
 };
 
