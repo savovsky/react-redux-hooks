@@ -6,13 +6,12 @@ import { addToBoard } from '../../actions/dndBoardsActions';
 const DnDContainer = (props) => {
   const handleDrop = e => {
     const containerId = e.currentTarget.id;
-    const itemId = e.dataTransfer.getData('itemId');
+    const itemId = +e.dataTransfer.getData('itemId');
     console.log('dropped containerId = ', containerId);
     console.log('dropped itemId = ', itemId);
     e.preventDefault();
 
     // const dragItem = document.getElementById(itemId);
-
 
     if (itemId) {
       // console.log('handleDrop dragItem id ', dragItem.id);

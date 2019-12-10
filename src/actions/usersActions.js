@@ -1,6 +1,8 @@
 import jsonPlaceholder from '../apis/jsonPlaceholder';
 import * as Utils from '../utils/commonUtils';
 
+import { initBoards } from './dndBoardsActions';
+
 export const fetchUser = (id) => async (dispatch) => {
   dispatch(fetchUserStart());
   const [response, error] = await Utils.to(jsonPlaceholder.get(`users/${id}`));
@@ -19,6 +21,7 @@ export const fetchUsers = () => async (dispatch) => {
 
   if (response) {
     dispatch(fetchUsersFulfilled(response.data));
+    dispatch(initBoards(Utils.getUsersIds(response.data)));
   } else {
     dispatch(fetchUsersRejected(error));
   }

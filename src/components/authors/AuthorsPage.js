@@ -23,14 +23,13 @@ class AuthorsPage extends React.Component {
     return this.props.dndBoards[boardId].map((id) => {
       return (
         <DnDItem id={id} key={id}>
-          <AuthorCard user={this.user(id)} />
+          <AuthorCard userId={id} />
         </DnDItem>
       );
     });
   }
 
   render() {
-    console.log(this.props.dndBoards);
     return (
       <div className="columns-container">
         <div className="column-wrapper">

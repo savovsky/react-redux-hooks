@@ -10,3 +10,7 @@ export const stringTruncate = (str, length) => {
   }
   return str;
 };
+
+export const getUsersIds = (users) => {
+  return users.map(user => user.id);
+}

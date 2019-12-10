@@ -1,4 +1,9 @@
 
+export const initBoards = (ids) => ({
+  type: 'INIT_BOARDS',
+  payload: { ids }
+});
+
 export const addToBoard = (boardId, itemId) => ({
   type: 'ADD_TO_BOARD',
   payload: { boardId, itemId }
