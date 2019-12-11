@@ -12,9 +12,10 @@ const DnDItem = (props) => {
     e.dataTransfer.setData('dragItem', dragItemId);
     e.dataTransfer.setData('sourceContainer', sourceContainerId);
 
+    
     // console.log('%c drag itemId = ', 'color: deepskyblue', dragItemId);
     // console.log('%c source containerId = ', 'color: gold', sourceContainerId);
-
+    
     props.dragStart(dragItemId, sourceContainerId);
   }
 
@@ -45,6 +46,5 @@ const mapDispatchToProps = (dispatch) => {
     dragOverItem: (dragOverItemId) => (dispatch(Action.dragOverItem(dragOverItemId)))
   };
 };
-
 
 export default connect(null, mapDispatchToProps)(DnDItem);
