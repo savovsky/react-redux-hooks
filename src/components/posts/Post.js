@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import PostAuthor from './PostAuthor';
 import * as Utils from '../../utils/commonUtils';

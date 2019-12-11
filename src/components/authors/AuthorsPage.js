@@ -14,19 +14,16 @@ class AuthorsPage extends React.Component {
       this.props.fetchUsers();
     }
   }
-
-  user(id) {
-    return this.props.users.find((user) => user.id === id);
-  }
-
+  
   renderList(boardId) {
-    return this.props.dndBoards[boardId].map((id) => {
+    return this.props.dndBoards.filter(board => board.id === boardId)[0].items.map((id) => {
       return (
-        <DnDItem id={id} key={id}>
+        <DnDItem id={id ? id : 'placeholder'} key={id ? id : 'placeholder'}>
           <AuthorCard userId={id} />
         </DnDItem>
       );
     });
+  
   }
 
   render() {
@@ -41,14 +38,14 @@ class AuthorsPage extends React.Component {
         </div>
         <div className="column-wrapper">
           <div className="column">
-          <DnDContainer id="b2">
+            <DnDContainer id="b2">
               {this.renderList('b2')}
             </DnDContainer>
           </div>
         </div>
         <div className="column-wrapper">
           <div className="column">
-          <DnDContainer id="b3">
+            <DnDContainer id="b3">
               {this.renderList('b3')}
             </DnDContainer>
           </div>
@@ -56,7 +53,6 @@ class AuthorsPage extends React.Component {
       </div>
     );
   }
-
 }
 
 const mapStateToProps = (state) => {

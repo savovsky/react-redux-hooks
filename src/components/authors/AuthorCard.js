@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const AuthorCard = (props) => {
   return (
-    <div className="card author p-20 m-10">
-      <h3 className="card-header m-b-15">{props.user.name}</h3>
-      <div className="card-footer">{props.user.website}</div>
-    </div>
+    <Link to={`/posts`}>
+      <div className="card p-20 m-10">
+        <h3 className="card-header m-b-15">{props.user.name}</h3>
+        <div className="card-footer">{props.user.website}</div>
+      </div>
+    </Link>
   );
 };
 

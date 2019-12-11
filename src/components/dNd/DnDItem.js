@@ -1,61 +1,50 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import * as Action from '../../actions/dndItemActions';
 
 
-class DnDItem extends React.Component {
+const DnDItem = (props) => {
 
-  constructor(props) {
-    super(props);
-    this.handleDragStart = this.handleDragStart.bind(this);
-    this.handleDragOver = this.handleDragOver.bind(this);
-
-    // this.state = {
-    //   hoveredId: null,
-    //   dragId: null
-    // };
-  }
-
-  handleDragStart(e) {
+  const handleDragStart = e => {
     const dragItemId = e.target.id;
     const sourceContainerId = e.target.parentNode.id;
     e.dataTransfer.setData('dragItem', dragItemId);
     e.dataTransfer.setData('sourceContainer', sourceContainerId);
 
-    console.log('%c drag itemId = ', 'color: deepskyblue', dragItemId);
-    console.log('%c source containerId = ', 'color: gold', sourceContainerId);
-    // this.setState({ dragId: dragItemId });
+    // console.log('%c drag itemId = ', 'color: deepskyblue', dragItemId);
+    // console.log('%c source containerId = ', 'color: gold', sourceContainerId);
+
+    props.dragStart(dragItemId, sourceContainerId);
   }
 
-  handleDragOver(e) {
-    e.stopPropagation();
+  const handleDragOver = e => {
+    // e.stopPropagation();
+    const dragOverItemId = e.currentTarget.id;
+    
+    // console.log('%c drag over itemId = ', 'color: darkcyan', dragOverItemId);
 
-    console.log('%c drag over itemId = ', 'color: darkcyan', e.currentTarget.id);
-    // this.setState({ hoveredId: e.currentTarget.id });
+    props.dragOverItem(dragOverItemId);
   }
-
-  // getClass() {
-  //   if (!this.state.dragId && this.state.dragId !== this.state.hoveredId) {
-  //     return 'm-t-130';
-  //   }
-
-  //   return 'm-0';
-  // }
-
-  render() {
-    // console.log('this.props.id', this.props.id);
-    // console.log('this.state.hoveredId', this.state.hoveredId);
-    // console.log('this.state.dragId', this.state.dragId);
     return (
       <div
-        id={this.props.id}
-        onDragStart={this.handleDragStart}
-        onDragOver={this.handleDragOver}
+        id={props.id}
+        onDragStart={handleDragStart}
+        onDragOver={handleDragOver}
         draggable
-        // className={this.getClass()}
       >
-        {this.props.children}
+        {props.children}
       </div>
     );
-  }
+  
 };
 
-export default DnDItem;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dragStart: (dragItemId, sourceContainerId) => (dispatch(Action.dragStart(dragItemId, sourceContainerId))),
+    dragOverItem: (dragOverItemId) => (dispatch(Action.dragOverItem(dragOverItemId)))
+  };
+};
+
+
+export default connect(null, mapDispatchToProps)(DnDItem);

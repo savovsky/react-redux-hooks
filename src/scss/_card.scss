@@ -1,12 +1,9 @@
 .card {
     @include card-shadow;
+    min-height: 70px;
     border: 1px solid $color-grey;
     border-radius: 5px;
     background-color: $color-white;
-
-    &.author {
-        cursor: move;
-    }
 }
 
 .card-header {

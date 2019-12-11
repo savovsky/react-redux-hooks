@@ -6,34 +6,54 @@ export default (state = DefaultState.dndBoards, action) => {
     
     switch (action.type) {
         case 'INIT_BOARDS' : {
-            return {
-                ...state,
-                b1: [...payload.ids]
-            };
+            return [
+                ...state.map(board => {
+                    if (board.id === 'b1') {
+                        return {...board, items:[...payload.ids]};
+                    }
+                    return board;
+                })
+            ];
         }
         case 'ADD_TO_BOARD' : {
-            return {
-                ...state,
-                [payload.boardId]: [...state[payload.boardId], payload.itemId]
-            };
+            return [
+                ...state.map(board => {
+                    if (board.id === payload.boardId) {
+                        return {...board, items:[...board.items, payload.itemId]};
+                    }
+                    return board;
+                })
+            ];
         }
         case 'REMOVE_FROM_BOARD' : {
-            return {
-                ...state,
-                [payload.boardId]: state[payload.boardId].filter(id => id !== payload.itemId)
-            };
+            return [
+                ...state.map(board => {
+                    if (board.id === payload.boardId) {
+                        return {...board, items: board.items.filter(id => id !== payload.itemId)};
+                    }
+                    return board;
+                })
+            ];
         }
         case 'ADD_PLACEHOLDER' : {
-            return {
-                ...state,
-                [payload.boardId]: [...state[payload.boardId], payload.placeholderId]
-            };
+            return [
+                ...state.map(board => {
+                    if (board.id === payload.boardId) {
+                        return {...board, items:[...board.items, payload.placeholderId]};
+                    }
+                    return board;
+                })
+            ];
         }
         case 'REMOVE_PLACEHOLDER' : {
-            return {
-                ...state,
-                [payload.boardId]: state[payload.boardId].filter(id => id !== payload.placeholderId)
-            };
+            return [
+                ...state.map(board => {
+                    if (board.id === payload.boardId) {
+                        return {...board, items: board.items.filter(id => id !== payload.placeholderId)};
+                    }
+                    return board;
+                })
+            ];
         }
 
         default: 
