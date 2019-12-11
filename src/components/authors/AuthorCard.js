@@ -10,6 +10,10 @@ const AuthorCard = (props) => {
   );
 };
 
+AuthorCard.defaultProps = {
+  user: {}
+}
+
 
 const mapStateToProps = (state, props) => {
   return {

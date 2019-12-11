@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addToBoard, removeFromBoard } from '../../actions/dndBoardsActions';
+import { addToBoard, removeFromBoard, addPlaceholder, removePlaceholder } from '../../actions/dndBoardsActions';
 
 const DnDContainer = (props) => {
   const handleDrop = e => {
@@ -23,6 +23,13 @@ const DnDContainer = (props) => {
 
   const handleDragOver = e => {
     e.preventDefault();
+    const containerId = e.currentTarget.id;
+    const placeholderId = 'placeholder';
+
+    if (!props.dndBoards[containerId].find(id => id === placeholderId)) {
+      props.addPlaceholder(containerId, placeholderId);
+      // props.dndBoards.forEach(() => props.removePlaceholder(containerId, placeholderId));
+    }
 
     console.log('%c drag over containerId = ', 'color: coral', e.currentTarget.id);
   };
@@ -39,4 +46,10 @@ const DnDContainer = (props) => {
   );
 };
 
-export default connect(null, { addToBoard, removeFromBoard })(DnDContainer);
+const mapStateToProps = (state) => {
+  return {
+    dndBoards: state.dndBoards
+  }
+};
+
+export default connect(mapStateToProps, { addToBoard, removeFromBoard, addPlaceholder, removePlaceholder })(DnDContainer);

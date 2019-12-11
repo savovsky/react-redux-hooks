@@ -23,6 +23,18 @@ export default (state = DefaultState.dndBoards, action) => {
                 [payload.boardId]: state[payload.boardId].filter(id => id !== payload.itemId)
             };
         }
+        case 'ADD_PLACEHOLDER' : {
+            return {
+                ...state,
+                [payload.boardId]: [...state[payload.boardId], payload.placeholderId]
+            };
+        }
+        case 'REMOVE_PLACEHOLDER' : {
+            return {
+                ...state,
+                [payload.boardId]: state[payload.boardId].filter(id => id !== payload.placeholderId)
+            };
+        }
 
         default: 
             return state;
